@@ -1,37 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Loops
+﻿namespace Loops
 {
     public class Task1
     {
         public void PrintNumbers()
         {
             int n = 100;
-            Console.WriteLine("\nseries of Numbers : ");
+            Console.WriteLine("\nSeries of numbers from 1 to 100 : ");
             for (int i = 1; i <= n; i++)
             {
-                Console.Write(i + " ");
+                Console.Write($"{i}\t");
             }
         }
         public void PrintEvenNumbers()
         {
             int n = 100;
-            Console.Write("\nEven Numbers: ");
+            Console.Write("\nEven Numbers from 1 to 100: ");
             for (int i = 1; i <= n; i++)
             {
                 if (i % 2 == 0)
-                { Console.Write(i + " "); }
+                    Console.Write($"{i}\t");
+
             }
         }
         public void MultiplicationTable()
         {
-            Console.Write("Enter Table Number: ");
+            Console.Write("Enter table number: ");
             int tableNumber = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Table limit(e.g .. 10): ");
+            Console.Write("Enter table limit(e.g .. 10): ");
             int n = Convert.ToInt32(Console.ReadLine());
             int i = 1;
             while (i <= n)
@@ -72,52 +67,51 @@ namespace Loops
             int n = 100;
 
             Console.WriteLine("Prime Numbers: ");
-            for(int i = 1; i < n; i++)
+            for (int i = 2; i <= n; i++)
             {
-                int count = 0;
-                for(int j=1;j<= i; j++)
+                bool isPrime = true;
+                for (int j = 2; j <= Math.Sqrt(i); j++)
                 {
-                    if(i%j==0)
+                    if (i % j == 0)
                     {
-                        count += 1;
+                        isPrime = false;
+                        break;
                     }
-
                 }
-                if(count==2)
+                if (isPrime)
                 {
-                    Console.Write(i+" ");
+                    Console.Write(i + " ");
                 }
-                
             }
         }
 
         public void SumOfDigits()
         {
-            Console.WriteLine("Enter number to do Sum of its digits: ");
+            Console.WriteLine("Enter number to do sum of its digits: ");
             int n = Convert.ToInt32(Console.ReadLine());
             int rem,sum=0;
             while(n>0)
             {
                 rem = n % 10;
-                sum =sum+ rem;
+                sum = sum + rem;
                 n = n/10;
                
             }
-            Console.WriteLine($"sum of Digits of a given number: {sum}");
+            Console.WriteLine($"Sum of its digits of a given number: {sum}");
         }
 
         public void FibonacciSequence()
         {
-            Console.WriteLine("Enter the Limit of the Fibonacci Sequence : ");
+            Console.WriteLine("Enter the limit of the fibonacci sequence : ");
             int n= Convert.ToInt32(Console.ReadLine());
             int i = 0,a=0,b=1,c;
-            Console.Write($"{a} {b} ");
+            Console.Write($"{a}\t{b}\t");
             while (i<n)
             {
                 c = a + b;
                 a = b;
                 b = c;
-                Console.Write(c + " ");
+                Console.Write($"{c}\t");
                 i++;
             }
         }
@@ -136,7 +130,7 @@ namespace Loops
 
         public void SumOfSeries()
         {
-            Console.WriteLine("Enter nth number to sum of series: ");
+            Console.WriteLine("Enter nth number to do sum of series: ");
             float n = Convert.ToSingle(Console.ReadLine());
             float sum = 1f; 
             for (int i = 2; i <= n; i++)

@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+﻿namespace Bank_Task5
 {
     internal class Program
     {
