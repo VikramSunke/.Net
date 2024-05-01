@@ -1,4 +1,6 @@
-﻿namespace Loops
+﻿using System.Text;
+
+namespace Loops
 {
     public class Task1
     {
@@ -27,7 +29,7 @@
             Console.Write("Enter table number: ");
             int tableNumber = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter table limit(e.g .. 10): ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
             int i = 1;
             while (i <= n)
             {
@@ -39,7 +41,7 @@
         public void FactorialCalculation()
         {
             Console.WriteLine("Enter number for factorial calculation: ");
-            int num = Convert.ToInt32(Console.ReadLine());
+            int num = int.Parse(Console.ReadLine());
             int factOfNum = 1;
             for (int i = num; i > 0; i--)
             {
@@ -54,12 +56,15 @@
         {
             Console.WriteLine("Enter the text you want to reverse");
             string text = Console.ReadLine();
-            string reversedText = "";
+
+            StringBuilder reversedTextBuilder = new StringBuilder(text.Length);
 
             for (int i = text.Length - 1; i >= 0; i--)
             {
-                reversedText += text[i];
+                reversedTextBuilder.Append(text[i]);
             }
+            string reversedText = reversedTextBuilder.ToString();
+
             Console.WriteLine("Reversed text: " + reversedText);
         }
         public void PrimeNumbers()
@@ -88,7 +93,7 @@
         public void SumOfDigits()
         {
             Console.WriteLine("Enter number to do sum of its digits: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
             int rem,sum=0;
             while(n>0)
             {
@@ -103,7 +108,7 @@
         public void FibonacciSequence()
         {
             Console.WriteLine("Enter the limit of the fibonacci sequence : ");
-            int n= Convert.ToInt32(Console.ReadLine());
+            int n= int.Parse(Console.ReadLine());
             int i = 0,a=0,b=1,c;
             Console.Write($"{a}\t{b}\t");
             while (i<n)
@@ -130,7 +135,7 @@
 
         public void SumOfSeries()
         {
-            Console.WriteLine("Enter nth number to do sum of series: ");
+            Console.WriteLine("Enter limit to do sum of series: ");
             float n = Convert.ToSingle(Console.ReadLine());
             float sum = 1f; 
             for (int i = 2; i <= n; i++)
