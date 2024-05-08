@@ -13,11 +13,6 @@
 
                 Console.WriteLine("Enter second number: ");
                 int num2 = GetUserInput();
-
-                if (num2 == 0)
-                {
-                    throw new DivideByZeroException("Cannot divide by zero");
-                }
                 int result = num1 / num2;
                 Console.WriteLine($"Result of division is {result}");
             }
@@ -40,7 +35,7 @@
 
                 if (value < 0)
                 {
-                    throw new InvalidInputException("Negative value not allowed");
+                    throw new InvalidInputException("You have entered the value less than zero");
                 }
 
 
