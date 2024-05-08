@@ -34,7 +34,7 @@
 
                 if (value < 0)
                 {
-                    throw new InvalidInputException("You have entered the value less than zero");
+                    throw new InvalidInputException("Value must be greater than zero");
                 }
 
 
