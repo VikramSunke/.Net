@@ -10,7 +10,6 @@
             {
                 Console.WriteLine("Enter first number: ");
                 int num1 = GetUserInput();
-
                 Console.WriteLine("Enter second number: ");
                 int num2 = GetUserInput();
                 int result = num1 / num2;
