@@ -13,15 +13,11 @@
 
                 Console.WriteLine("Enter second number: ");
                 int num2 = GetUserInput();
-
-                if(num2 == 0)
-                {
-                    throw new DivideByZeroException("Cannot divide by zero");
-                }
                 int result = num1 / num2;
                 Console.WriteLine($"Result of division is {result}");
             }
-            catch(DivideByZeroException ex)
+           
+            catch (DivideByZeroException ex)
             {
                 Console.WriteLine(ex.Message);
             }
