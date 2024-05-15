@@ -13,28 +13,28 @@ namespace Permutations
             Console.WriteLine($"All possible permutations of the {str} : ");
             GeneratePermutations(charArray.Length, charArray);
         }
-        static void GeneratePermutations(int k, char[] A)
+        static void GeneratePermutations(int length, char[] charArray)
         {
-            if (k == 1)
-                Console.WriteLine(A);  
+            if (length == 1)
+                Console.WriteLine(charArray);  
             else
             {
-                GeneratePermutations(k - 1, A);
-                for (int i = 0; i < k - 1; i++)
+                GeneratePermutations(length - 1, charArray);
+                for (int i = 0; i < length - 1; i++)
                 {
-                    if (k % 2 == 0)
+                    if (length % 2 == 0)
                     {
-                        char temp = A[i];
-                        A[i] = A[k - 1];
-                        A[k - 1] = temp;
+                        char temp = charArray[i];
+                        charArray[i] = charArray[length - 1];
+                        charArray[length - 1] = temp;
                     }
                     else
                     {
-                        char temp = A[0];
-                        A[0] = A[k - 1];
-                        A[k - 1] = temp;
+                        char temp = charArray[0];
+                        charArray[0] = charArray[length - 1];
+                        charArray[length - 1] = temp;
                     }
-                    GeneratePermutations(k - 1, A);
+                    GeneratePermutations(length - 1, charArray);
                 }
             }
         }
